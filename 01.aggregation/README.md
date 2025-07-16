@@ -12,35 +12,6 @@ https://www.mongodb.com/products/compass
 
 Mongosh을 이용하여 Atlas와 연결하여 데이터를 생성합니다.
 
-먼저 데이터베이스를 선택하여야 합니다. (이미 해당 데이터베이스를 사용 하고 있으면 생략 합니다)
-````
-Atlas atlas-gamf6g-shard-0 [primary] > use handson
-switched to db handson
-Atlas atlas-gamf6g-shard-0 [primary] handson>
-````
-
-데이터를 생성 하여 주기 위해 다음을 실행 하여 줍니다.   
-````
-Atlas atlas-gamf6g-shard-0 [primary] handson> for (i=0;i<100;i++) {
- const newUser = {
-             ssn:"123-456-000"+i, 
-             email:"user"+i+"@email.com", 
-             name:"Gildong Hong "+i, 
-             age: Math.floor(Math.random()*100),
-             DateOfBirth: "1st Jan.", 
-             Hobbies:["Martial arts"],
-             Addresses:[{"Address Name":"Work","Street":"431, Teheran-ro GangNam-gu ","City":"Seoul", "Zip":"06159"}], 
-             Phones:[{"type":"mobile","number":"010-5555-1234"}]
-           };
-           db.user.insertOne(newUser);
- }
-{
-  acknowledged: true,
-  insertedId: ObjectId("659e5627a72e1f57957a78c9")
-}
-````
-
-데이터가 100건이 생성이 되게 됩니다.
 
 
 #### Connection
@@ -66,7 +37,9 @@ Connection String을 복사하여 줍니다. 이후 Compass를 실행 하여 줍
 
 
 
-#### MQL
+### MQL
+
+
 
 
 ### Aggregation
