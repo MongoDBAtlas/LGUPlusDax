@@ -10,6 +10,6 @@
    - Handson [GitHub][1]
 
 
-[0]: https://github.com/MongoDBAtlas/LGUPlusAICCHandson/tree/main/00.pre-work
-[1]: https://github.com/MongoDBAtlas/LGUPlusAICCHandson/tree/main/01.aggregation
+[0]: https://github.com/MongoDBAtlas/LGUPlusDax/tree/main/00.pre-work
+[1]: https://github.com/MongoDBAtlas/LGUPlusDax/tree/main/01.aggregation
 
