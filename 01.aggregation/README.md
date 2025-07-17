@@ -39,8 +39,66 @@ Connection String을 복사하여 줍니다. 이후 Compass를 실행 하여 줍
 
 ### MQL
 
+insertOne()
+```
+db.customers.insertOne({ 
+_id : "bob@gmail.com", 
+name: "Robert Smith", orders: [], spend: 0, 
+lastpurchase: null 
+})
 
+db.customers.insertOne({ 
+_id : "bob@gmail.com", 
+name: "Bobby Smith", orders: [], spend: 0, 
+lastpurchase: null 
+})
 
+db.customers.insertOne({
+name: "Andi Smith", orders: [], spend: 0, 
+lastpurchase: null 
+})
+
+```
+
+insertMany()
+
+```
+let friends = [ 
+{_id: "joe" }, 
+{_id: "bob" }, 
+{_id: "joe" }, 
+{_id: "jen" } 
+]
+db.friends.insertMany(friends)
+```
+findOne()
+```
+db.customers.findOne({ _id : "bob@gmail.com" })
+db.customers.findOne({ spend: 0 })
+db.customers.findOne({ spend: 0 , name: "Timothy" })
+```
+projection
+```
+db.customers.insertOne({ 
+_id : "ann@gmail.com", 
+name: "Ann", orders: [], spend: 0, 
+lastpurchase: null 
+})
+db.customers.findOne({ name: "Ann" })
+db.customers.findOne({ name:"Ann" },{name:1, spend:1})
+db.customers.findOne({ name:"Ann" },{name:0, orders:0})
+db.customers.findOne({ name:"Ann" },{_id: 0, name:1})
+```
+
+update
+```
+db.players.insertMany([
+ { _id: "mary", points: 150, wins: 25, highscore: 60 },
+ { _id: "tom", points: 95, wins: 18, highscore: 110 }])
+db.players.updateOne({_id:"mary"}, {$set : { points :160, wins: 26}})
+db.players.find({_id:"mary"})
+db.players.updateMany({points : {$lt:200}}, {$set:{level:"beginner"}})
+```
 
 ### Aggregation
 
