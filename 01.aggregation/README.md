@@ -77,6 +77,47 @@ db.customers.findOne({ _id : "bob@gmail.com" })
 db.customers.findOne({ spend: 0 })
 db.customers.findOne({ spend: 0 , name: "Timothy" })
 ```
+
+Range operators
+
+```
+for(x=0;x<200;x++) { db.taxis.insertOne({plate:x})}
+db.taxis.find({plate : { $gt : 25 }})
+db.taxis.find({plate: { $gte: 25 }})
+db.taxis.find({plate: { $lt: 25 }})
+db.taxis.find({plate: { $gt: 25 , $lt: 30 }})
+db.taxis.find({plate: { $ne: 3 }})
+db.taxis.find({plate: { $in: [1,3,6] }})
+db.taxis.find({plate: { $nin: [2,4,7] }})
+```
+
+Boolean logic operators
+
+```
+db.pets.insertMany([ 
+{ species: "cat", color: "brown"},
+{ species: "cat", color: "black"},
+{ species: "dog", color: "black"},
+{ species: "dog", color: "brown"},
+])
+
+db.pets.find({ 
+$or: [
+{species: "cat",color: "black"},
+{species: "dog",color: "brown"} 
+]
+})
+
+db.pets.find({
+species: { 
+$not: {$lte: "cat" }
+}, 
+color: "black" 
+})
+
+```
+
+
 projection
 ```
 db.customers.insertOne({ 
