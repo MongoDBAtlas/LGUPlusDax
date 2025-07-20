@@ -118,7 +118,7 @@ color: "black"
 ```
 
 
-projection
+Projection
 ```
 db.customers.insertOne({ 
 _id : "ann@gmail.com", 
@@ -131,7 +131,7 @@ db.customers.findOne({ name:"Ann" },{name:0, orders:0})
 db.customers.findOne({ name:"Ann" },{_id: 0, name:1})
 ```
 
-update
+updateOne() & updateMany()
 ```
 db.players.insertMany([
  { _id: "mary", points: 150, wins: 25, highscore: 60 },
