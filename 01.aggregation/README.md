@@ -66,7 +66,6 @@ insertMany()
 let friends = [ 
 {_id: "joe" }, 
 {_id: "bob" }, 
-{_id: "joe" }, 
 {_id: "jen" } 
 ]
 db.friends.insertMany(friends)
